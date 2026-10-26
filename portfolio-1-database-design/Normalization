@@ -1,0 +1,8 @@
+**1st Normal Form (1NF):** 
+All tables have a primary key (`user_id`, `wallet_id`, `transaction_id`, `entry_id`). All attributes contain atomic, indivisible values.
+
+**2nd Normal Form (2NF):**
+The schema is in 1NF, and there are no partial dependencies. Every non-key attribute is fully functionally dependent on the entire primary key via single-column UUIDs.
+
+**3rd Normal Form (3NF) & BCNF:**
+The schema is in 2NF, and there are no transitive dependencies. For example, `wallet_id` in the `transactions` table links to the `wallets` table rather than duplicating wallet balances. Every determinant is a candidate key.
